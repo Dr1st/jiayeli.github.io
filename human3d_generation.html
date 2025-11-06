@@ -1,0 +1,184 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>LLMs in 3d human generation</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload research-page">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo">LLMs in 3D Human Generation</a>
+									<!-- <ul class="icons">
+										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+									</ul> -->
+								</header>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>LLMs Powered Personalized Text and Image to 3D Human Body Model Pipeline</h1>
+									</header>
+
+									<span class="image main"><img src="images/Pipeline1.jpg" alt="" /></span>
+
+									<p>We propose a pipeline with an interactive interface for generating and modifying 3D human body models using text or image input. 
+										The pipeline includes text-to-3D model generation, image-to-3D model generation, and text-controlled modifications of 3D models utilizing parametric models SMPL and SMPL-X. 
+										We extract body parameters from models, label their meanings and relationships, and use a specialized version of ChatGPT to translate natural language descriptions into body parameters. 
+										These body parameters are input into the generation model to create 3D human models. We use the SMPL-X API from <i>Meshcapade Me</i> for image-to-3D model generation.</p>
+									<p>Modifications to the 3D models are achieved by extracting and standardizing body measurements, then using Multivariable Linear Regression to map them to body parameters for model generation. 
+										We avoided direct generation from body measurements to prevent gaps in the models. The mapped parameters are fed into a specialized ChatGPT, enabling users to modify the 3D model based on natural language descriptions. 
+										We also created a web-based interface to give users easy access to the entire pipeline and detailed explanations of each step in the model generation process. 
+										Finally, we evaluate the quality of the generated models using a survey. Our contributions are summarized as follows:</p>
+										<ul>
+											<li>Proposed a complete pipeline with an interactive interface that allows users to generate 3D human body models based on text or image input and modify the models based on text input.</li>
+											<li>Proposed a mapping method to transform body measurements into body parameters for improved 3D model generation.</li>
+											<li>Developed a specialized ChatGPT for translating natural language descriptions and instructions into body parameters in the SMPL model.</li>
+											<li>Demonstrated the potential and limitations of using LLMs for 3D human body model generation to encourage exercise and outlined future research directions.</li>
+										</ul>
+									
+
+									<hr class="major" />
+
+									<h2>Text and Image to Model Generation</h2>
+									<span class="image main"><img src="images/3D Human Generation/Text_Image_Results_V0.1.jpg" alt="" /></span>
+									<p>Our system's 3D human body models are categorized into three sets. The first set (a) includes models created from simple descriptive terms, such as "thin," "strong," or "overweight." The second set (b) uses more detailed descriptions, incorporating specific attributes like height, weight, and body characteristics. The third set (c) are models generated directly from images.</p>
+									<!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p> -->
+
+									<hr class="major" />
+
+									<h2>Text Controlled 3D Human Body Model Modification</h2>
+									<span class="image main"><img src="images/3D Human Generation/Text_Modified_Results_V0.1.jpg" alt="" /></span>
+									<p>This figure demonstrates how the system modifies 3D human body models based on different types of text inputs. The system takes original images and processes inputs such as preserving body shape, making direct text-based changes (e.g., "thinner" or "stronger"), and predicting results from short-term (one month) and long-term (one year) exercise plans.</p>
+									<!-- <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p> -->
+
+									<hr class="major" />
+
+									<h2>Evaluation</h2>
+									<p>Due to the lack of comprehensive human body data, the wide variety of body types, and people's different interpretations of body-related features, we could not establish a clear baseline for comparison. Instead, we conducted a subjective evaluation using surveys to gather user feedback on whether the generated models met their expectations.</p>
+									<span class="image main"><img src="images/3D Human Generation/Survey_Results.jpg" alt="" /></span>
+									<p>This figure presents the results for four survey questions, where participants were asked to select the description that best matches the shown model. (a) and (b) illustrate the results of simple adjectives, while (c) and (d) demonstrate more complex descriptions. The highlighted descriptions (orange) in the chart correspond to those used to generate the 3D body model. The results indicate that participants' opinions are more consistent for simpler descriptions, while responses become more diverse for more complex descriptions.</p>
+									<span class="image main"><img src="images/3D Human Generation/Survey_Transform.jpg" alt="" /></span>
+									<p>This figure presents the results for two questions. The model at the bottom is transformed from the one at the top. Participants were asked to identify the activity most likely responsible for the change. The highlighted descriptions (orange) in the chart correspond to the activity used to transform the 3D body model. The results indicate that participants can recognize changes resulting from exercise but are less sensitive to the specific effects of different types of exercise, as shown in (a).</p>
+
+									<hr class="major" />
+
+									<h2>Conclusion</h2>
+									<p>In conclusion, we present a comprehensive pipeline for generating and modifying 3D human body models using text and image inputs, combining parametric models with LLMs. We redefined and labeled the body parameters in the parametric models and trained a specialized version of ChatGPT to translate natural language descriptions into body parameter sets or adjustments. For text-based model modification, we designed a mapping method that transforms body measurements into body parameters to support the modification process better. By introducing an interactive interface, we offer an accessible and customizable approach to 3D body modeling. This development highlights the potential of LLMs to support more personalized and motivational applications in areas like fitness, where users can visualize potential physical improvements. In this context, our survey evaluates the feasibility and limitations of using LLMs, which lays the foundation for future research on enhancing user engagement and model precision. In the future, we aim to improve the pipeline by implementing everything locally and gathering more human body data to enhance the model's accuracy.</p>
+
+								</section>
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							<!-- Search -->
+								<section id="search" class="alt">
+									<form method="post" action="#">
+										<input type="text" name="query" id="query" placeholder="Search" />
+									</form>
+								</section>
+
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="index.html">Home</a></li>
+										<li><a href="works.html">Publications & Research Projects</a></li>
+										<li><a href="elements.html">Elements</a></li>
+										<!-- <li>
+											<span class="opener">Submenu</span>
+											<ul>
+												<li><a href="#">Lorem Dolor</a></li>
+												<li><a href="#">Ipsum Adipiscing</a></li>
+												<li><a href="#">Tempus Magna</a></li>
+												<li><a href="#">Feugiat Veroeros</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Etiam Dolore</a></li>
+										<li><a href="#">Adipiscing</a></li>
+										<li>
+											<span class="opener">Another Submenu</span>
+											<ul>
+												<li><a href="#">Lorem Dolor</a></li>
+												<li><a href="#">Ipsum Adipiscing</a></li>
+												<li><a href="#">Tempus Magna</a></li>
+												<li><a href="#">Feugiat Veroeros</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Maximus Erat</a></li>
+										<li><a href="#">Sapien Mauris</a></li>
+										<li><a href="#">Amet Lacinia</a></li> -->
+									</ul>
+								</nav>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Get in Touch</h2>
+									</header>
+									<!-- <p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p> -->
+									<ul class="contact">
+										<li class="icon solid fa-envelope"><a href="#">jiayeli@link.cuhk.edu.cn</a></li>
+										<!-- <li class="icon solid fa-phone">(000) 000-0000</li> -->
+										<!-- <li class="icon solid fa-home">1234 Somewhere Road #8254<br /> -->
+										<!-- Nashville, TN 00000-0000</li> -->
+									</ul>
+								</section>
+
+							<!-- Section -->
+								<!-- <section>
+									<header class="major">
+										<h2>Get in touch</h2>
+									</header>
+									<p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+									<ul class="contact">
+										<li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
+										<li class="icon solid fa-phone">(000) 000-0000</li>
+										<li class="icon solid fa-home">1234 Somewhere Road #8254<br />
+										Nashville, TN 00000-0000</li>
+									</ul>
+								</section> -->
+
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; Design: By Jiaye Li</a>.</p>
+								</footer>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
