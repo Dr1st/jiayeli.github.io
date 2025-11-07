@@ -1516,13 +1516,17 @@ button,
   input[type="button"]:hover,
   button:hover,
   .button:hover {
-    background-color: rgba(245, 106, 106, 0.05); }
+    background-color: rgba(245, 106, 106, 0.15);
+    color: #f56a6a;
+  }
   input[type="submit"]:active,
   input[type="reset"]:active,
   input[type="button"]:active,
   button:active,
   .button:active {
-    background-color: rgba(245, 106, 106, 0.15); }
+    background-color: rgba(245, 106, 106, 0.25);
+    color: #fff;
+  }
   input[type="submit"].icon:before,
   input[type="reset"].icon:before,
   input[type="button"].icon:before,
@@ -2356,24 +2360,24 @@ button,
    Custom style for GenAI in Fitness Coaching page
    ============================================== */
 
-  /* 让主标题小一些 */
+  
   .research-page section header.main h1 {
-    font-size: 1.8em; /* 原本约2.5em，可改为1.6~1.9 */
+    font-size: 1.8em; 
     line-height: 1.3;
     margin-bottom: 0.8em;
   }
 
-  /* 让所有图片（包括主图与文中图）稍微小一点 */
+  
   .research-page img {
-    max-width: 80%;      /* 图片宽度不超过容器的80% */
+    max-width: 80%;      
     height: auto;
     display: block;
-    margin: 1.5em auto;  /* 图片居中并留出上下间距 */
-    object-fit: contain; /* 保持比例不裁剪 */
-    border-radius: 8px;  /* 可选，让图片更柔和 */
+    margin: 1.5em auto;  
+    object-fit: contain; 
+    border-radius: 8px;  
   }
 
-  /* 可选：主图再额外限制高度，避免太高 */
+  
   .research-page .image.main img {
     max-height: 450px;
   }
@@ -2399,4 +2403,46 @@ button,
     background-color: #fafafa;
   }
   
-  
+  /* === Search Result List === */
+  #search-results {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0.5em;
+    max-height: 250px;
+    overflow-y: auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  #search-results li {
+    padding: 0.6em 0.5em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    font-size: 0.9em;
+    line-height: 1.4em;
+    color: #ccc; 
+    transition: background-color 0.25s, color 0.25s;
+  }
+
+  #search-results li:hover {
+    background-color: rgba(245, 106, 106, 0.25); 
+    color: #fff; 
+  }
+
+  #search-results li:first-child {
+    border-top: none;
+  }
+
+  #search-results::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  #search-results::-webkit-scrollbar-thumb {
+    background-color: rgba(245, 106, 106, 0.5); 
+    border-radius: 3px;
+  }
+
+  .highlight {
+    background-color: rgba(245, 106, 106, 0.3);
+    transition: background-color 0.5s ease;
+  }
+

@@ -22,7 +22,7 @@
 
 							<!-- Header -->
 								<header id="header">
-									<a href="works.html" class="logo">LLMs in 3D Human Generation</a>
+									<a href="index.html#human3d_generation" class="logo">Large Language Models in 3D Human Generation</a>
 									<!-- <ul class="icons">
 										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
@@ -98,6 +98,7 @@
 									<form method="post" action="#">
 										<input type="text" name="query" id="query" placeholder="Search" />
 									</form>
+									<ul id="search-results"></ul>
 								</section>
 
 							<!-- Menu -->
@@ -106,9 +107,9 @@
 										<h2>Menu</h2>
 									</header>
 									<ul>
-										<li><a href="index.html">Home</a></li>
-										<li><a href="works.html">Publications & Research Projects</a></li>
-										<li><a href="elements.html">Elements</a></li>
+										<li><a href="index.html#banner">Resume</a></li>
+										<li><a href="index.html#human3d_generation">Research Projects</a></li>
+										<li><a href="index.html#publications">Publications</a></li>
 										<!-- <li>
 											<span class="opener">Submenu</span>
 											<ul>
@@ -140,12 +141,12 @@
 									<header class="major">
 										<h2>Get in Touch</h2>
 									</header>
-									<!-- <p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p> -->
 									<ul class="contact">
 										<li class="icon solid fa-envelope"><a href="#">jiayeli@link.cuhk.edu.cn</a></li>
-										<!-- <li class="icon solid fa-phone">(000) 000-0000</li> -->
-										<!-- <li class="icon solid fa-home">1234 Somewhere Road #8254<br /> -->
-										<!-- Nashville, TN 00000-0000</li> -->
+									</ul>
+			
+									<ul class="contact">
+										<li class="icon brands fa-linkedin"><a href="#" target="_blank">LinkedIn</a></li>
 									</ul>
 								</section>
 
@@ -180,5 +181,69 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
+			<script>
+				document.addEventListener("DOMContentLoaded", function () {
+				const searchInput = document.getElementById("query");
+				const resultsList = document.getElementById("search-results");
+				
+				if (!searchInput || !resultsList) return;
+				
+				// 获取页面中所有可搜索内容
+				const searchableItems = Array.from(document.querySelectorAll("h2, h3, p, a"))
+					.filter(el => el.textContent.trim().length > 0)
+					.map(el => ({
+					text: el.textContent.trim(),
+					element: el
+					}));
+				
+				// 监听输入
+				searchInput.addEventListener("input", function (e) {
+					const query = e.target.value.trim().toLowerCase();
+					resultsList.innerHTML = ""; // 清空旧结果
+				
+					// 清除旧高亮
+					document.querySelectorAll(".highlight").forEach(el => {
+					el.classList.remove("highlight");
+					});
+				
+					if (!query) return;
+				
+					// 搜索匹配项
+					const matches = searchableItems.filter(item =>
+					item.text.toLowerCase().includes(query)
+					);
+				
+					if (matches.length === 0) {
+					const li = document.createElement("li");
+					li.textContent = "No results found.";
+					li.style.color = "#aaa";
+					resultsList.appendChild(li);
+					return;
+					}
+				
+					// 生成结果列表
+					matches.slice(0, 10).forEach(match => {
+					const li = document.createElement("li");
+					li.textContent = match.text.length > 80
+						? match.text.slice(0, 80) + "..."
+						: match.text;
+				
+					li.classList.add("result-item");
+				
+					// 点击跳转到对应位置
+					li.addEventListener("click", () => {
+						match.element.scrollIntoView({ behavior: "smooth", block: "center" });
+						match.element.classList.add("highlight");
+				
+						// 短暂高亮动画
+						setTimeout(() => match.element.classList.remove("highlight"), 2000);
+					});
+				
+					resultsList.appendChild(li);
+					});
+				});
+				});
+			</script>
+			
 	</body>
 </html>
