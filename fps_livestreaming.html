@@ -22,7 +22,7 @@
 
 							<!-- Header -->
 								<header id="header">
-									<a href="index.html" class="logo">Understanding the Challenges of Team-Based Live Streaming for First-person Shooter Games</a>
+									<a href="works.html" class="logo">Understanding the Challenges of Team-Based Live Streaming for First-person Shooter Games</a>
 									<!-- <ul class="icons">
 										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
@@ -42,59 +42,220 @@
 
 									<p>
 										<span class="image left">
-										  <img src="images/Training Flowchart.jpg" alt="Training Visualization" />
+										  <img src="images/FPS Live Streaming/MLG.jpg" alt="Training Visualization" />
 										</span>
-										<p>Since the emergence of ChatGPT, it has shown potential as a smart assistant for fitness. Several applications and specialized versions of ChatGPT have been developed to create personalized exercise programs and provide post-exercise nutrition and recovery advice. However, these versions of ChatGPT often provide overly general suggestions and lack strong visual aids. In this paper, we introduce a specialized ChatGPT as a personalized assistant capable of correcting improper postures and analyzing body compositions. We trained ChatGPT to improve posture during exercises and daily activities, aiming to prevent injuries and optimize training effectiveness.</p>
-										<p>Additionally, we explored ChatGPT’s potential to understand body compositions and predict physical transformations, providing users with insights into the outcomes of their fitness and nutrition efforts. We focused on investigating the limitations and potential of the current ChatGPT in the sports domain to identify future challenges. Our results indicate that the current ChatGPT model can effectively identify and correct incorrect postures. In terms of body composition, ChatGPT can analyze body fat on a larger scale but is less sensitive to smaller changes in body fat. To further improve ChatGPT's performance, more image datasets on gym exercises, human postures, and body compositions are needed.</p>
+										<p>
+											First-person shooter (FPS) game tournaments take place across the globe. 
+											A growing number of people choose to watch FPS games online instead of attending the game events in person. 
+											However, live streaming might miss critical highlight moments in the game, including kills and tactics. 
+											We identify how and why the live streaming team fails to capture highlight moments to reduce such live streaming mistakes. 
+											We named such mistakes <em>Jarring Observations</em>.
+										  </p>
+										  
+										  <p>
+											We conducted a field study of live streaming competitions of 
+											<em>Game For Peace</em>, a popular FPS mobile game, to summarize five typical 
+											<em>Jarring Observations</em> and identify three primary reasons that caused the issues. 
+											We further studied how to improve the live streaming system to prevent 
+											<em>Jarring Observations</em> from happening by doing semi-structured interviews with 
+											two professional streaming teams for <em>Game For Peace</em>. <strong>The study showed that a better system should: (1) add a new sub-team role to share the director's responsibility of managing observers; (2) provide interfaces customized for three roles of live streamers in the team; (3) abstract more geographical info; (4) predict the priority of observation targets; and (5) provide non-verbal interfaces for sync-up between sub-teams</strong>.
+											Our work provides insights for esports streaming system researchers and developers 
+											to improve the system for a smoother audience experience.
+										  </p>
 									</p>
 									
 
 									<hr class="major" />
 
-									<h2>ChatGPT or LLM Specialized for Gym Coaching, Posture Correction and Body Composition Analysis</h2>
-			
+									<h2>Field Study and Survey</h2>
+
 									<p>
-										<span class="image right">
-										  <img src="images/GenAI for Gym/Training.jpg" alt="Training Visualization" />
-										</span>
-										<p>The development process of this specialized ChatGPT model involved several key steps. Initially, we designed specific prompts to guide the model’s focus toward generating training plans and recognizing users’ exercise movements through image analysis. We then provided the model with a collection of text descriptions sourced online that describe the correct techniques for performing various types of gym training. During this stage, we noticed the absence of a comprehensive dataset containing procedural diagrams or detailed visual guides for proper gym equipment use. Most existing datasets consist only of isolated snapshots that capture a single moment of equipment usage, lacking the sequential context required for comprehensive understanding. To address this limitation, we collected a limited number of images to train the model.</p>
-										<p>This visual demonstrations (see left image) of gym exercises produced by our model and the latest ChatGPT model. (a), (b), and (c), display real-life examples of exercises performed incorrectly. (d), (e), and (f) present our model’s outputs, including single snapshots and visual representations of the full sequence of movements for performing each exercise correctly. (g), (h), and (i) show the corresponding full movement sequences generated by the latest version of ChatGPT.</p>
-										<p>As shown, our model is capable of generating images that capture specific moments within an exercise, though some generated images contain slight inaccuracies. For instance, in (e), most aspects of the deadlift demonstration are correct, except for an inaccurate interaction between the equipment and the character. </p>
+										We conducted a field study in the real setting where the live streaming team worked for a two-day esports tournament of 
+										<em>Game for Peace</em>, a battle royal shooter game created by <em>Lightspeed Studio</em>. 
+										Then, we surveyed eight professional live streamers to find out the causes of 
+										<em>Jarring Observations</em>. 
 									</p>
+
+										<h3>Methodology</h3>
+
+										<p>
+											Based on the audience complaints of <em>jarring observations</em>, we paid attention to identifying and categorizing the 
+											<em>jarring observations</em> that happened during the live streaming service. 
+											During the field study, we also recorded how the live streaming team cooperates as a team. 
+											After the live streaming service ended, we prompted questions about how the teamwork structure formed 
+											and the functions of specific live streaming system interfaces. 
+											After the field study, we transcribed the communication information and used the open coding method 
+											to identify the common <em>jarring observations</em>.
+										</p>
+										
+										<p>
+											Based on the results of the field study, we surveyed eight professional live streamers, including one director 
+											and seven observers, to study the causes of <em>jarring observations</em>. 
+											To complete the survey, the participants first read the description of <em>jarring observations</em> 
+											and then answered the following open-ended questions for each <em>Jarring Observation</em> scenario:
+										</p>
+										
+										<ul>
+											<li><strong>Q1:</strong> Did you encounter such kind of scenario?</li>
+											<li><strong>Q2:</strong> How does the scenario influence live streaming? What are the benefits and harms?</li>
+											<li><strong>Q3:</strong> On a scale of one (definitely not) to five (definitely yes), how much does the scenario negatively affect a live streaming experience?</li>
+											<li><strong>Q4:</strong> How would you deal with the scenario?</li>
+										</ul>
+										
+										<p>
+											We used a mixed-method approach to analyze the results of the surveys.
+										</p>
+										
+										<h3>Teamwork Structure</h3>
+				
+										<p>
+										<span class="image right">
+										  <img src="images/FPS Live Streaming/TeamWorkflow.jpg" alt="Training Visualization" />
+										</span>
+										<p>
+											In general, the live streaming team for FPS esports is divided into two sub-teams: the director and the observer(s). 
+											The director instructs observers to monitor specific players and capture the players' highlight moments. 
+											The director can receive multiple video streams from the observers on a big monitor screen. 
+											Occasionally, the observers may speak up loudly to update an ongoing event to the whole team.
+										  </p>
+										  
+										  <p>
+											In our field study, we further observed that the live streaming team refined their teamwork structure 
+											by delegating one of the observers only to take charge of reporting the critical events observed 
+											from the game's mini-map, which is called a <strong>map observer</strong> (see right image).  
+											The map observer shares the director's responsibility to monitor critical in-game events. 
+											However, we found from our field study that this position did not yet address how players communicate 
+											with each other by shouting out messages, which caused chaotic moments that led to 
+											<em>jarring observations</em>.
+										  </p>
+										  
+										</p>
+
+										<h3>Live Streaming System Interfaces</h3>
+
+										<p>
+											<span class="image left">
+												<img src="images/FPS Live Streaming/Views.jpg" alt="Training Visualization" style="width:100%; max-width:1000px; height:auto;" />
+											</span>
+											<p>
+												In our field study, we found that the live streaming system provided different interfaces for the director and the observers. 
+												The observers mainly operated the virtual in-game camera in four modes as shown in the left image: 
+												a first-person view, a third-person view, a free-roam view, and a follow mode view. 
+												We did not find that this camera operations design might potentially cause 
+												<em>jarring observations</em>.
+											</p>
+
+											<p>
+												The observers also showed their system's front-end display that provides the following information: 
+												players' names, equipment, utility trajectory, and kills. 
+												To keep tracking the player hidden behind a wall, the observer can enter the 
+												<q>Wall Hack</q> mode to see through a physical wall. 
+												The examples of the <q>Wall Hack</q> mode and the utility trajectory visualization are shown in 
+												the left image. 
+												Neither did we find that the design of the front-end display might potentially cause 
+												<em>jarring observations</em>.
+											</p>
+											
+											<p>
+												The director sits in front of a huge multi-screen monitor. 
+												The multi-screen monitor receives live video signals coming from the observers. 
+												The monitor provides two additional special screens besides the observers' screens: 
+												the <strong>PGM</strong> screen displays the current video signals that the audience is watching, 
+												and the <strong>PV</strong> screen displays the video signals from another source that is ready to switch to. 
+												The director assigned an observer's streaming video to one of the special screens through a physical button on a keypad. 
+												We found that the director was distracted by not being able to maintain an intensively high level of focus 
+												while managing multiple screens for a long period, which resulted in some 
+												<em>jarring observations</em>.
+											</p>
+												
+											</p>
 
 									<hr class="major" />
 
-									<h2>Challenges in Applying LLMs for Fitness Coaching</h2>
+										<h3>Typical Jarring Observations and Primary Causes</h3>
+
+										<p>
+											We summarized five typical <em>jarring observations</em> that we recorded in the field study.
+											We also derived the underlying causes for each of the five <em>jarring observations</em> recorded in the field study.
+											</p>
+										  
+											<table style="width:100%; border-collapse:collapse; margin-top:1em;">
+											  <thead>
+												<tr style="background-color:#f4f4f4;">
+												  <th style="text-align:left; padding:8px; border-bottom:2px solid #ccc;">Scenario</th>
+												  <th style="text-align:left; padding:8px; border-bottom:2px solid #ccc;">Underlying Cause</th>
+												</tr>
+											  </thead>
+											  <tbody>
+												<tr>
+												  <td style="vertical-align:top; padding:8px;"><strong>S1:</strong> The director could not switch to the attacker's FP view because none of the observers provided such a perspective.</td>
+												  <td style="vertical-align:top; padding:8px;"><strong>C1 &rarr; S1:</strong> Observers must manually locate the target using keyboard/mouse, often missing highlight moments while searching the map.</td>
+												</tr>
+												<tr>
+												  <td style="vertical-align:top; padding:8px;"><strong>S2:</strong> Observers were unclear which video source the director was using and accidentally tracked the same player.</td>
+												  <td style="vertical-align:top; padding:8px;"><strong>C2 &rarr; S2:</strong> Observers lacked information about other observers’ screens and the PGM/PV sources.</td>
+												</tr>
+												<tr>
+												  <td style="vertical-align:top; padding:8px;"><strong>S3:</strong> Multiple fights happened simultaneously, and the director’s instructions were lost in the noise.</td>
+												  <td style="vertical-align:top; padding:8px;"><strong>C3 &rarr; S3:</strong> Observers shouted to coordinate tasks, missing instructions due to the noisy environment.</td>
+												</tr>
+												<tr>
+												  <td style="vertical-align:top; padding:8px;"><strong>S4:</strong> The observer showing on PGM aimed at the wrong player during a shooting scene.</td>
+												  <td style="vertical-align:top; padding:8px;"><strong>C4 &rarr; S4:</strong> High kill frequency made it difficult to predict upcoming actions — <q>it is hard to predict who would make the first shot</q>.</td>
+												</tr>
+												<tr>
+												  <td style="vertical-align:top; padding:8px;"><strong>S5:</strong> The director referred to a player as “that yellow jacket,” confusing observers.</td>
+												  <td style="vertical-align:top; padding:8px;"><strong>C5 &rarr; S5:</strong> Observers struggled to interpret vague verbal descriptions (e.g., <q>that yellow jacket guy</q>).</td>
+												</tr>
+											  </tbody>
+											</table>
+										  </section>
+										  
+
+									<h2>Design Recommendations to Prevent Jarring Observations</h2>
 
 									<p>
-									LLMs offer the potential for more accessible, convenient, and cost-effective training guidance. 
-									However, our research identifies several challenges in applying LLMs for this purpose:
-									</p>
+										In order to propose useful design recommendations to prevent the <i>jarring observations</i> from happening, 
+										we conducted two interviews with two professional FPS games live streaming teams. 
+										The interviews were conducted on <i>Tencent Meeting</i>, an online meeting tool, 
+										and lasted between 90 and 120 minutes.
+									  </p>
+									  
+									  <p>
+										Findings from the interview suggest improving team structure of the live streaming team, 
+										enriching game data display, and providing AI prediction features during live streaming. 
+										We conclude with five design recommendations to help the team prevent 
+										<i>jarring observations</i>:
+									  </p>
+									  
+									  <ul>
+										<li><b>RD1</b>: Add a new sub-team role, the commander, to share the director's responsibility of managing observers;</li>
+										<li><b>RD2</b>: Provide interfaces customized for three roles of live streamers in the team;</li>
+										<li><b>RD3</b>: Abstract more geographical information;</li>
+										<li><b>RD4</b>: Predict the observation priority of players;</li>
+										<li><b>RD5</b>: Design non-verbal interfaces for sync-up between sub-teams.</li>
+									  </ul>
+									
+									  <h3>Communication-Efficient Live Streaming Team Structure</h3>
 
-									<ul>
-									<li><strong>Overstandardized Training Plans:</strong> 
-										The training plans generated by LLMs tend to be predefined and lack customization 
-										to meet individuals’ specific needs and goals.
-									</li>
-
-									<li><strong>Challenges in Creating Accurate Training Action Images:</strong> 
-										LLMs struggle to produce images that correctly represent the logical sequence of 
-										training actions, limiting their effectiveness in providing clear, actionable guidance.
-									</li>
-
-									<li><strong>Insufficient Data on Gym Equipment Training and Human Body Metrics:</strong> 
-										There is a lack of datasets for detailed equipment training techniques and evaluating 
-										human body compositions. This lack of data limits the ability of LLMs to offer precise 
-										and helpful feedback on body composition and the correct execution of exercises.
-									</li>
-
-									<li><strong>Ethical and Copyright Concerns with Image Generation:</strong> 
-										Generating images based on real-life photographs of individuals can raise ethical concerns, 
-										including privacy and consent issues. Similarly, creating images derived from virtual characters 
-										can lead to copyright infringement problems, posing significant legal challenges.
-									</li>
-									</ul>
-
+									  <p>
+										<span class="image left">
+											<img src="images/FPS Live Streaming/Commander.jpg" alt="Training Visualization" />
+										</span>
+										<p>
+											Team structure in the current live streaming team is redundant since each position's responsibility is unclear, which causes overlapping workflow. 
+											It is necessary to add a new position between the director and the observer, whose duty includes in-game events sync-up and issuing tracking instructions to observers. 
+											Moreover, the director should only take charge of selecting scenes for streaming, while the observer should only focus on capturing highlights. 
+											As a director suggested, “I think we should not provide too much information for the director. Since I need to keep an eye on around ten screens, any other irrelevant information distracts me.” 
+										  </p>
+										  
+										  <p>
+											In actual practice, some professional live streaming teams set a subgroup named “Scheduler” which “tracks all game teams' moving tendencies, updates battle situations, and predicts the next potential highlights.” 
+											By adding this subgroup and simplifying the duties of the Director and the Observer, we can reach “a top-down workflow” and “alleviate communication stress during live streaming.” Based on our interviews, we proposed a novel team structure (see left image).
+										  </p>
+										  
+											
+										</p>
 
 									<!-- <hr class="major" />
 
